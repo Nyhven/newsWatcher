@@ -21,6 +21,27 @@ function    findResponse_articles() {
     return (null);
 }
 
+/* ####### TROUVE DES ARTICLE-REPONSE ENTRE UN MINIMUM ET UN MAXIMUM ######## */
+function    findResponse_articles($min, $max) {
+    try {
+        $bdd = connectDB();
+        $stmt = $bdd->prepare('SELECT * FROM response_article ORDER BY id_resp LIMIT ?, ?');
+        $stmt->bindValue(1, $min, PDO::PARAM_INT);
+        $stmt->bindValue(2, $max, PDO::PARAM_INT);
+        $success = $stmt->execute();
+        if ($success) {
+            $res = null;
+            while ($line = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $res[] = $line;
+            }
+            return($res);
+        }
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    return (null);
+}
+
 /* ##################### TROUVE UN ARTICLE-REPONSE SELON ID ######################## */
 function    findResponse_articleById($id) {
     try {
