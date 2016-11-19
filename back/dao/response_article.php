@@ -117,6 +117,5 @@ function    updateResponse_article($id, $title, $content, $grade, $arg1, $arg2) 
     return (FALSE);
 }
 
-SELECT url_src_specific, url, grade FROM link_response_src INNER JOIN sources ON sources.id_src = link_response_src.id_src WHERE link_response_src.id_resp = ?
 
  ?>
