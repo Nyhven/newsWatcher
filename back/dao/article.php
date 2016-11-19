@@ -2,8 +2,8 @@
 
 require_once('connectDB.php');
 
-/* ###################### TROUVE TOUS LES ARTICLE ############################ */
-function    findArticle() {
+/* ###################### TROUVE TOUS LES ARTICLE ########################### */
+function    findArticles() {
     try {
         $bdd = connectDB();
         $stmt = $bdd->prepare('SELECT * FROM article');
@@ -21,12 +21,12 @@ function    findArticle() {
     return (null);
 }
 
-/* ########################## TROUVE UN ARTICLE ############################### */
-function    findArticleByID($id) {
+/* ##################### TROUVE UN ARTICLE SELON URL ######################## */
+function    findArticleByURL($url) {
     try {
         $bdd = connectDB();
-        $stmt = $bdd->prepare('SELECT * FROM article WHERE id_art = ?');
-        $stmt->bindValue(1, $id, PDO::PARAM_INT);
+        $stmt = $bdd->prepare('SELECT * FROM article WHERE url_src = ?');
+        $stmt->bindValue(1, $url, PDO::PARAM_STR);
         $success = $stmt->execute();
         if ($success) {
             $res = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -42,20 +42,14 @@ function    findArticleByID($id) {
     return (FALSE);
 }
 
-/* ########################## AJOUTE UN ARTICLE ############################### */
-function    addArticle($src, $dest, $grade, $arg1, $arg2) {
+/* ########################## AJOUTE UN ARTICLE ############################# */
+function    addArticle($src, $response) {
     try {
         $bdd = connectDB();
-        $stmt = $bdd->prepare('INSERT INTO article (url_src, url_dest, grade, arg1, arg2)
-            VALUES(?, ?, ?, ?, ?)');
+        $stmt = $bdd->prepare('INSERT INTO article (url_src, id_resp) VALUES(?, ?)');
         $stmt->bindValue(1, $src, PDO::PARAM_STR);
-        $stmt->bindValue(2, $dest, PDO::PARAM_STR);
-        $stmt->bindValue(3, $grade, PDO::PARAM_STR);
-        $stmt->bindValue(4, $arg1, PDO::PARAM_STR);
-        $stmt->bindValue(5, $arg2, PDO::PARAM_STR);
-        if ($stmt->execute()) {
-            return ($bdd->lastInsertId());
-        }
+        $stmt->bindValue(2, $response, PDO::PARAM_INT);
+        return ($stmt->execute());
     }
     catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
@@ -63,12 +57,12 @@ function    addArticle($src, $dest, $grade, $arg1, $arg2) {
     return (FALSE);
 }
 
-/* ######################### EFFACE UN ARTICLE ################################ */
-function    deleteArticle($id) {
+/* ######################### EFFACE UN ARTICLE ############################## */
+function    deleteArticle($src) {
     try {
         $bdd = connectDB();
-        $stmt = $bdd->prepare('DELETE FROM article WHERE id_art = ?');
-        $stmt->bindValue(1, $nom, PDO::PARAM_INT);
+        $stmt = $bdd->prepare('DELETE FROM article WHERE url_src = ?');
+        $stmt->bindValue(1, $nom, PDO::PARAM_STR);
         return ($stmt->execute());
     } catch (Exception $ex) {
         die('Erreur : ' . $ex->getMessage());
@@ -76,18 +70,29 @@ function    deleteArticle($id) {
     return (FALSE);
 }
 
-/* ###################### METS UN JOUR UN ARTICLE ########################### */
-function    updateArticle($src, $dest, $grade, $arg1, $arg2, $id) {
+/* ####################### METS A JOUR UN ARTICLE ########################### */
+function    updateArticle($newSrc, $oldSrc, $dest) {
     try {
         $bdd = connectDB();
-        $stmt = $bdd->prepare('UPDATE article SET url_src = ?, url_dest = ?, grade = ?,
-                arg1 = ?, arg2 = ? WHERE id_art = ?');
+        $stmt = $bdd->prepare('UPDATE article SET url_src = ?, id_resp = ? WHERE url_src = ?');
+        $stmt->bindValue(1, $newSrc, PDO::PARAM_STR);
+        $stmt->bindValue(2, $dest, PDO::PARAM_INT);
+        $stmt->bindValue(3, $oldSrc, PDO::PARAM_STR);
+        return ($stmt->execute());
+    } catch (Exception $ex) {
+        die('Erreur : ' . $ex->getMessage());
+    }
+    return (FALSE);
+}
+
+/* ################ METS A JOUR LA REPONSE A UN ARTICLE ##################### */
+function    updateArticleOnResponse($src, $dest) {
+    try {
+        $bdd = connectDB();
+        $stmt = $bdd->prepare('UPDATE article SET url_src = ?, id_resp = ? WHERE url_src = ?');
         $stmt->bindValue(1, $src, PDO::PARAM_STR);
-        $stmt->bindValue(2, $dest, PDO::PARAM_STR);
-        $stmt->bindValue(3, $grade, PDO::PARAM_STR);
-        $stmt->bindValue(4, $arg1, PDO::PARAM_STR);
-        $stmt->bindValue(5, $arg2, PDO::PARAM_STR);
-        $stmt->bindValue(6, $id, PDO::PARAM_INT);
+        $stmt->bindValue(2, $dest, PDO::PARAM_INT);
+        $stmt->bindValue(3, $src, PDO::PARAM_STR);
         return ($stmt->execute());
     } catch (Exception $ex) {
         die('Erreur : ' . $ex->getMessage());
