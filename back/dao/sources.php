@@ -64,12 +64,13 @@ function    findSourcesByResponseArticle($id_resp) {
 }
 
 /* ########################## AJOUTE UN ARTICLE ############################# */
-function    addSource($url, $grade) {
+function    addSource($url, $grade, $nom) {
     try {
         $bdd = connectDB();
-        $stmt = $bdd->prepare('INSERT INTO sources (url, grade) VALUES(?, ?)');
+        $stmt = $bdd->prepare('INSERT INTO sources (url, grade, nom) VALUES(?, ?, ?)');
         $stmt->bindValue(1, $url, PDO::PARAM_STR);
         $stmt->bindValue(2, $grade, PDO::PARAM_INT);
+        $stmt->bindValue(3, $nom, PDO::PARAM_STR);
         if ($stmt->execute()) {
             return ($bdd->lastInsertId());
         }
@@ -94,13 +95,14 @@ function    deleteSource($id) {
 }
 
 /* ####################### METS A JOUR UNE SOURCE ########################### */
-function    updateSource($id, $url, $grade) {
+function    updateSource($id, $url, $grade, $nom) {
     try {
         $bdd = connectDB();
-        $stmt = $bdd->prepare('UPDATE sources SET url = ?, grade = ? WHERE id_src = ?');
+        $stmt = $bdd->prepare('UPDATE sources SET url = ?, grade = ?, nom = ? WHERE id_src = ?');
         $stmt->bindValue(1, $url, PDO::PARAM_STR);
         $stmt->bindValue(2, $grade, PDO::PARAM_INT);
-        $stmt->bindValue(3, $id, PDO::PARAM_INT);
+        $stmt->bindValue(3, $nom, PDO::PARAM_STR);
+        $stmt->bindValue(4, $id, PDO::PARAM_INT);
         return ($stmt->execute());
     } catch (Exception $ex) {
         die('Erreur : ' . $ex->getMessage());
