@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "News Watcher Agent",
+  "description": "Make the web a smarter place",
+  "version": "0.0.1",
+  "author": "anonymous",
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "notifications",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "scripts/jquery.js",
+      "scripts/background.js"
+    ],
+    "persistant": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "scripts/jquery.js",
+        "scripts/onContent.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "img/success128.png",
+    "default_popup": "front/popup.html"
+  },
+  "icons": {
+    "128": "img/success128.png"
+  }
+}
