@@ -6,7 +6,7 @@ if(isset($_GET['page']))
 else
     $page = 0;
 $datas = findResponse_articles($page*$step, ($page+1)*$step);
-echo json_encode($datas);
+$json = json_encode($datas);
 
 
 ?>
