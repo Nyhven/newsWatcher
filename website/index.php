@@ -84,15 +84,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             foreach ($datas as $article) {
                 echo("
 					<div class=\"article\">
-					<a class=\"title\" href=\"article.php?id=" . $article["id_resp"] . "\">" . $article['title'] . "</a>
+					<a class=\"title\" href=\"article.php?id=. $article["id_resp"] . "\" >
+					<h3>". $article['title'] ."</h3>
 					<div class='row'>
-					<a href=\"article.php?id=" . $article["id_resp"] . "\" class='col-md-2' style='margin: 15px; padding: 10px'><img src=\"images/a2.jpg\" alt=\"\" /></a>");
+					<img class='col-md-2' style='margin: 15px; padding: 10px;' src=\"images/a2.jpg\" alt=\"\" /></a>");
                 //we should display the stamp here, need to see with Swann
                 echo("
 
 					<p class='col-md-9' style='margin:0px'>" . substr($article['content'], 0, 500) . "...</p>
 					
 					</div>
+					</a>
 					</div>
 				");
             }
