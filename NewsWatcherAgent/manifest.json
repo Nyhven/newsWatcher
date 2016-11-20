@@ -26,6 +26,9 @@
       "js": [
         "libs/jquery.js",
         "scripts/onContent.js"
+      ],
+      "css": [
+        "css/onContent.css"
       ]
     }
   ],
