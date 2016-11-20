@@ -12,11 +12,11 @@ var sites = {
         "brightside.me",
         "withgoogle.com",
 
+        "swtours.fr",
         "100percentfedup.com",
         "21stcenturywire.com",
         "70news.wordpress.com",
         "abcnews.com.co",
-        "smilybox.fr",
         "activistpost.com",
         "addictinginfo.org",
         "americannewsx.com",
