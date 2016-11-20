@@ -84,62 +84,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             foreach ($datas as $article) {
                 echo("
 					<div class=\"article\">
-					<h6>Printers</h6>
-					<a class=\"title\" href=\"article.php?id=".$article["id_resp"]."\">".$article['title']."</a>
-					<a href=\"article.php?id=".$article["id_resp"]."\"><img src=\"images/a2.jpg\" alt=\"\" /></a>");
+					<a class=\"title\" href=\"article.php?id=" . $article["id_resp"] . "\">" . $article['title'] . "</a>
+					<div class='row'>
+					<a href=\"article.php?id=" . $article["id_resp"] . "\" class='col-md-2' style='margin: 15px; padding: 10px'><img src=\"images/a2.jpg\" alt=\"\" /></a>");
                 //we should display the stamp here, need to see with Swann
                 echo("
 
-					<p>".substr($article['content'], 0, 500)."...</p>
+					<p class='col-md-9' style='margin:0px'>" . substr($article['content'], 0, 500) . "...</p>
+					
+					</div>
 					</div>
 				");
             }
             ?>
 
-            <div class="article">
-                <h5 class="head">in recent news</h5>
-                <h6>Test Nodes</h6>
-                <a class="title" href="single.html">Node testing of cytoscape.js </a>
-                <div class="cwbox">
-                    <div id=cy class="cytoscape"></div>
-                    <script>
-                        var cy = cytoscape({
-                            container: document.getElementById('cy'),
-                            elements: [
-                                {data: {id: 'a'}},
-                                {data: {id: 'b'}},
-                                {
-                                    data: {
-                                        id: 'ab',
-                                        source: 'a',
-                                        target: 'b'
-                                    }
-                                }]
-                        });
-                    </script>
-                </div>
-            </div>
-            <div class="article">
-                <h6>Software </h6>
-                <a class="title" href="single.html">DeltaMaker – The new kid on the block An Elegant 3D Printer and a
-                    new wicked ass thing</a>
-                <a href="single.html"><img src="images/a1.jpg" alt=""/></a>
-                <p>Products were inspired by Behance's research of especially productive teams in the creative industry.
-                    Hundreds of individuals and teams were interviewed, and Behance chronicled the work habits and best
-                    practices of creative leaders. </p>
-                <p>The paper products were initially designed by and for the Behance team as a way to stay organized. In
-                    2007, at the insistence of friends who wanted Action Pads of their own...</p>
-            </div>
-            <div class="article">
-                <h6>Printers</h6>
-                <a class="title" href="single.html">Nokia offering customers printable STL phone cases for the Lumia 820
-                    and things </a>
-                <a href="single.html"><img src="images/a2.jpg" alt=""/></a>
-                <p>This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range.
-                    This week Nokia a files for printable case for it’s new Lumia 820 range. This week Nokia announced
-                    it is giving away files for printable case for it’s new Lumia 820 range. This week Nokia announced
-                    it is giving away files for printable case for it’s new Lumia 820 range. </p>
-            </div>
+
         </div>
         <div class="col-md-4 content-right">
             <div class="content-right-top">
