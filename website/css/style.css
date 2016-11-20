@@ -43,10 +43,11 @@ input[type="button"],input[type="submit"]{
 	-ms-transition:0.5s all;
 }
 h1,h2,h3,h4,h5,h6{
-	margin:0;			   
-}	
+	margin:0;
+}
 p{
 	margin:0;
+	text-align: justify;
 }
 ul{
 	margin:0;
@@ -217,7 +218,7 @@ a.title {
 	padding:0;
 	border-left:1px solid #e6e6e6;
 }
-.editor { 
+.editor {
 	border-bottom:1px solid #e6e6e6;
 	padding: 2.3em 1.5em 0 1.5em;
 }
@@ -1331,7 +1332,7 @@ p.span a {
 		padding-right: 10px;
 		padding-left: 10px;
 	}
-	
+
 	.navigation ul li:first-child {
 		display: none;
 	}
@@ -1386,7 +1387,7 @@ p.span a {
 	}
 	.copyrights p {
 		text-align: center;
-		line-height:1.7em;	
+		line-height:1.7em;
 	}
 	.footer-bottom {
 		padding: 1.2em 0;
@@ -1418,7 +1419,7 @@ p.span a {
 		width: 56%;
 		margin-right: 0;
 		margin-bottom:0.7em;
-	}	
+	}
 	.print-text {
 		width: 100%;
 	}
@@ -1459,9 +1460,9 @@ p.span a {
 	}
 	.cmnts-left {
 		width: 59%;
-		padding: 0;	
+		padding: 0;
 		  height: 18px;
-	}	
+	}
 	.cmnts-left p {
 		font-size: 9px;
 		margin-top:0.3em;

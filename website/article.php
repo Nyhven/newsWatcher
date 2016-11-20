@@ -4,6 +4,13 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+
+<?php
+
+require_once("back/pages/article.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,13 +24,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Konstructs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta property="og:title" content="This Article is referenced in NewsWatcher : <?php echo $articleDatas['title']; ?>" />
+<meta property="og:type" content="<?php echo $articleDatas['content']; ?>" />
+<meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+<meta property="og:image" content="http://www.newswatch.tk/images/stamp_<?php echo $articleDatas['grade']; ?>.jpg" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src='js/cytoscape/cytoscape.js'></script>
 </head>
 <body>
-<?php require_once("/back/pages/article.php"); ?>
+
 	<!-- header-section-starts -->
 	<?php
 		include 'pages/header.php'
@@ -35,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<span class="menu"></span>
 			<div class="list-nav">
-				<ul>                                                                 
+				<ul>
 					<?php
 						include 'pages/navbar.php'
 					?>
@@ -59,7 +68,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="single-page">
 				<div class="print-main">
 					<h3><?php echo $articleDatas['title']; ?></h3>
+
+					<div class="cwbox">
+						<div id=cy class="cytoscape"></div>
+					</div>
+					<?php
+					/*
+					$scriptNode = "<script>" .
+						"var cy = cytoscape({" .
+							"container: document.getElementById('cy')," .
+							"elements: [" .
+								"{data: {id: 'center'}},";
+					foreach ($srcDatas as $tab) {
+						$scriptNode .= "{data: {id: '" . $tab['nom'] . "'}},";
+					}
+					$scriptNode .= '{ ';
+					foreach ($srcDatas as $tab) {
+						$scriptNode .= "data: {" .
+							"id: 'centerTo" . $tab['nom'] . "', " .
+							"source: 'center'," .
+							"target: '" . $tab['nom'] . "', },";
+					}
+					$scriptNode .= "}] }); </script>";
+					echo $scriptNode;*/
+					?>
+					<script>
+						var cy = cytoscape({
+							container: document.getElementById('cy'),
+							elements: {
+								nodes: [
+									{data: {id: 'A',name:"sourceA"}},
+									{data: {id: 'B',name:"sourceB"}},
+									{data: {id: 'C',name:"sourceC"}},
+									{data: {id: 'center', name:"Cible"}},
+								],
+								edges: [
+									{ data: { source: 'center', target: 'A' } },
+									{ data: { source: 'center', target: 'B' } },
+									{ data: { source: 'center', target: 'C' } },
+								]
+							},
+						});
+					</script>
 					<p class="ptext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $articleDatas['content']; ?></p>
+
 				</div>
 			</div>
 			<div class="clearfix"></div>
