@@ -73,41 +73,43 @@ require_once("back/pages/article.php");
 						<div id=cy class="cytoscape"></div>
 					</div>
 					<?php
+					/*
 					$scriptNode = "<script>" .
 						"var cy = cytoscape({" .
 							"container: document.getElementById('cy')," .
 							"elements: [" .
 								"{data: {id: 'center'}},";
 					foreach ($srcDatas as $tab) {
-						$scriptNode .= "{data: {id: " . $tab['nom'] . "}},";
+						$scriptNode .= "{data: {id: '" . $tab['nom'] . "'}},";
 					}
-					$scriptNode .= '{ data: {';
+					$scriptNode .= '{ ';
 					foreach ($srcDatas as $tab) {
-						$scriptNode .= "id: 'centerTo" . $tab['nom'] . "', " .
+						$scriptNode .= "data: {" .
+							"id: 'centerTo" . $tab['nom'] . "', " .
 							"source: 'center'," .
-							"target: '" . $tab['nom'] . "', ";
+							"target: '" . $tab['nom'] . "', },";
 					}
-					$scriptNode .= "} }] }); </script>";
-					echo $scriptNode;
-					/*
+					$scriptNode .= "}] }); </script>";
+					echo $scriptNode;*/
+					?>
 					<script>
 						var cy = cytoscape({
 							container: document.getElementById('cy'),
-							elements: [
-								{data: {id: 'a'}},
-								{data: {id: 'b'}},
-								{
-									data: {
-										id: 'ab',
-										source: 'a',
-										target: 'b'
-									}
-								}]
+							elements: {
+								nodes: [
+									{data: {id: 'A',name:"sourceA"}},
+									{data: {id: 'B',name:"sourceB"}},
+									{data: {id: 'C',name:"sourceC"}},
+									{data: {id: 'center', name:"Cible"}},
+								],
+								edges: [
+									{ data: { source: 'center', target: 'A' } },
+									{ data: { source: 'center', target: 'B' } },
+									{ data: { source: 'center', target: 'C' } },
+								]
+							},
 						});
 					</script>
-					*/
-					?>
-
 					<p class="ptext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $articleDatas['content']; ?></p>
 
 				</div>
