@@ -72,107 +72,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<div class="container bodycontainer">
 		<div class="content">
-			<div class="col-md-8 content-left">
-				<div class="article">
-					<h5 class="head">in recent news</h5>
-					<h6>Test Nodes</h6>
-					<a class="title" href="single.html">Node testing of cytoscape.js </a>
-					<div class="cwbox">
-						<div id=cy class="cytoscape"></div>
-						<script>
-						  var cy = cytoscape({
-							container: document.getElementById('cy'),
-							elements: [
-								{ data: { id: 'a' } },
-								{ data: { id: 'b' } },
-								{
-								data: {
-									id: 'ab',
-									source: 'a',
-									target: 'b'
-								}
-								}]
-							});
-						</script>
-					</div>
-				</div>
-				<div class="article">
-					<h6>Software </h6>
-					<a class="title" href="single.html">DeltaMaker – The new kid on the block An Elegant 3D Printer and a new wicked ass thing</a>
-					<a href="single.html"><img src="images/a1.jpg" alt="" /></a>
-					<p>Products were inspired by Behance's research of especially productive teams in the creative industry. Hundreds of individuals and teams were interviewed, and Behance chronicled the work habits and best practices of creative leaders. </p>
-					<p>The paper products were initially designed by and for the Behance team as a way to stay organized. In 2007, at the insistence of friends who wanted Action Pads of their own...</p>
-				</div>
-				<div class="article">
-					<h6>Printers</h6>
-					<a class="title" href="single.html">Nokia offering customers printable STL phone cases for the Lumia 820 and things </a>
-					<a href="single.html"><img src="images/a2.jpg" alt="" /></a>
-					<p>This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range. This week Nokia a files for printable case for it’s new Lumia 820 range. This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range. This week Nokia announced it is giving away files for printable case for it’s new Lumia 820 range. </p>
-				</div>
-			</div>
-			<div class="col-md-4 content-right">
-			<div class="content-right-top">
-				<h5 class="head">Popular</h5>	
-				<a href="single.html">
-					<div class="editor text-center">
-						<h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
-						<p>A new cheap ass 3D Printer worth checking out</p>
-						<label>2 Days Ago</label>
-						<span></span>
-					</div>
-				</a>
-				<a class="active" href="single.html">
-					<div class="editor text-center">
-						<h3>Software Review: Autodesk Inventor Fusion for Mac</h3>
-						<p>3D Printing, 3D Software</p>
-						<label>3 Days Ago</label>
-						<span></span>
-					</div>
-				</a>
-				<a href="single.html">
-					<div class="editor text-center">
-						<h3>DeltaMaker – The new kid on the block An Elegant 3D Printer</h3>
-						<p>A new cheap ass 3D Printer worth checking out</p>
-						<label>2 Days Ago</label>
-						<span></span>
-					</div>
-				</a>
-				<a href="single.html">
-					<div class="editor text-center">
-						<h3>Software Review: Autodesk Inventor Fusion for Mac</h3>
-						<p>3D Printing, 3D Software</p>
-						<label>3 Days Ago</label>
-						<span></span>
-					</div>
-				</a>
-				</div>
-				<div class="editors-pic-grids">
-					<h5>Editors Pick</h5>
-					<div class="editors-pic">
-						<div class="e-pic">
-							<a href="single.html"><img src="images/ep1.jpg" alt="" /></a>
-						</div>
-						<div class="e-pic-info">
-							<a href="single.html">MarkerBot Announces the ‘Replicator 2x’  For the Experimental</a>
-							<span></span>
-							<label>2 Days Ago</label>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="editors-pic">
-						<div class="e-pic">
-							<a href="single.html"><img src="images/ep2.jpg" alt="" /></a>
-						</div>
-						<div class="e-pic-info">
-							<a href="single.html">3D Printed Record – the next revolution?</a>
-							<span></span>
-							<label>2 Days Ago</label>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
+			<div class="single-page">
+				<div class="print-main">
+					<h3>Printing</h3>
+					<a href="single.html">Software Review: Autodesk Inventor Fusion for Mac</a>
+					<p class="sub_head">Posted by <a href="#">Admin</a> on february 14,2015</p>
+					<a href="single.html"><img src="images/printing.jpg" class="img-responsive" alt="" /></a>
+					<p class="span"><a href="#">3D Printing, <a href="#">3D Software,</a><a href="#"> Files to Print </a> |  on february 14,2015</p>
+					<p class="ptext">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like</p>
+					<p class="ptext">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like</p>
+				</div>	
 			</div>
 			<div class="clearfix"></div>
+		</div>
 	<div class="footer">
 		<div class="footer-top">
 			<div class="container">

@@ -2,24 +2,6 @@
 
 require_once('connectDB.php');
 
-/* ################## TROUVE TOUTES LES ARTICLE-REPONSE ##################### */
-function    findResponse_articles() {
-    try {
-        $bdd = connectDB();
-        $stmt = $bdd->prepare('SELECT * FROM response_article');
-        $success = $stmt->execute();
-        if ($success) {
-            $res = null;
-            while ($line = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $res[] = $line;
-            }
-            return($res);
-        }
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-    return (null);
-}
 
 /* ####### TROUVE DES ARTICLE-REPONSE ENTRE UN MINIMUM ET UN MAXIMUM ######## */
 function    findResponse_articles($min, $max) {
@@ -35,6 +17,8 @@ function    findResponse_articles($min, $max) {
                 $res[] = $line;
             }
             return($res);
+        }else{
+            echo"Error on reading DB";
         }
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
