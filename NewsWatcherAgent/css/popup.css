@@ -1,0 +1,93 @@
+/* FONTS */
+@font-face {
+    font-family: "gisha";
+    src: url(../fonts/GISHA.TTF) format("truetype");
+}
+@font-face {
+    font-family: "gishaB";
+    src: url(../fonts/GISHABD.TTF) format("truetype");
+}
+
+/* GENERAL */
+body {
+    width: 200px;
+    position: relative;
+    margin:0 !important;
+}
+
+.title {
+    font-family: gishaB, serif;
+    font-size: 1.3em;
+    color: #FCC446;
+    text-shadow: 0 0 1px rgba(134, 134, 134, 0.61);;
+}
+
+.text {
+    font-family: gisha, serif;
+    font-size: 1em;
+}
+
+/* HEADER */
+header {
+    background-color: #FCC446;
+    height: 37px;
+}
+
+header div {
+    position: absolute;
+    top: 4px;
+}
+
+header #logo {
+    left: 10px;
+    top: -1px;
+}
+
+header #img_title {
+    left: 76px;
+    top: 11px;
+}
+
+header #menu {
+    top: 9px;
+    right: 10px;
+    width: 4px;
+    overflow: hidden;
+}
+header #menu .fa {
+    font-size: 1.8em;
+    color: #3C3C3B;
+}
+header #menu:hover .fa {
+    color: white;
+    transition: all 200ms ease ;
+}
+
+/* MAIN */
+
+main #mainInfos {
+    padding: 10px;
+}
+
+main #doughnut {
+    position: relative;
+    height: 150px;
+    margin-top: 15px;
+}
+main #doughnut .title {
+    color: #3C3C3B;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+main #doughnut #treatedNumber {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+}
+main #doughnut #chartContainer {
+    position: absolute;
+}

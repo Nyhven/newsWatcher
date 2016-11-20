@@ -12,7 +12,7 @@
   ],
   "background": {
     "scripts": [
-      "scripts/jquery.js",
+      "libs/jquery.js",
       "scripts/background.js"
     ],
     "persistant": true
@@ -24,16 +24,16 @@
         "http://*/*"
       ],
       "js": [
-        "scripts/jquery.js",
+        "libs/jquery.js",
         "scripts/onContent.js"
       ]
     }
   ],
   "browser_action": {
-    "default_icon": "img/success128.png",
+    "default_icon": "img/NW-PLUGIN-128-2-10.png",
     "default_popup": "front/popup.html"
   },
   "icons": {
-    "128": "img/success128.png"
+    "128": "img/NW-PLUGIN-128-2-10.png"
   }
 }

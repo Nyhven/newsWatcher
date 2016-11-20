@@ -42,6 +42,18 @@ function linkTruthCallback(userContentWrapper, url) {
             $(userContentWrapper).find('.comment_link').each(function(index){
                 $(this).text('Comment (article might be fake)');
             });
+        } else if (results.truth < 60) {
+            $(userContentWrapper).find('.comment_link').each(function(index){
+                $(this).text('Comment');
+            });
+        } else if (results.truth < 80) {
+            $(userContentWrapper).find('.comment_link').each(function(index){
+                $(this).text('Comment (article might be safe)');
+            });
+        } else {
+            $(userContentWrapper).find('.comment_link').each(function(index){
+                $(this).text('Comment (article is probably safe)');
+            });
         }
     } 
 }
