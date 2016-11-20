@@ -15,12 +15,10 @@ function    findResponse_articles($min, $max) {
             $res = null;
             while ($line = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $res[] = $line;
-                echo".";
             }
-            print_r($res);
             return($res);
         }else{
-            echo"nope";
+            echo"Error on reading DB";
         }
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
