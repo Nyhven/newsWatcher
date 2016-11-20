@@ -167,12 +167,8 @@ function checkNewLinks() {
 
             if (isFake) {
                 $(this).find('.comment_link').each(function(index){
-                    $(this).text('Comment (this site contains clickbait and unreliable news)');
-                    $(this).hide().show();
-                    $(this).css('color', 'red');
-                    //$(this).parent().prev().hide();
-                    $(this).parent().next().insertBefore($(this));
-
+                    $(this).parent().next()
+                        .after('<hr><p style="color:red; font-weight:bold;">Warning: this site is known to contain clickbait and unreliable, biased news. Think before you share, and consider commenting so people know.</p><p style="color: #444">Example comment: "Hi, just so you know this site is known for misleading or very biased news, so don\'t believe everything you read there. See <a style="margin: 0; padding: 0; color: #222" href="http://newswatcher.co">newswatcher.co</a> for details"</p>');
                 });
                 $(this).parent().css('border', '1px solid red');
                 $(this).addClass('_nw_checked');
