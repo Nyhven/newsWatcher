@@ -15,6 +15,7 @@ var untrustedSites = [
     "21stcenturywire.com",
     "70news.wordpress.com",
     "abcnews.com.co",
+    "smilybox.fr",
     "activistpost.com",
     "addictinginfo.org",
     "americannewsx.com",
@@ -148,12 +149,12 @@ function checkNewLinks() {
     jQuery(".userContentWrapper:not(._nw_checked)").each(function(index) {
         //console.log($(this).find(".userContentWrapper").length);
         if ($(this).find(".userContentWrapper").length === 0) {
-            console.log(this);
-            var that = this;
+            var that = $(this);
+            console.log(that);
             var isFake = false;
-            var fullClass = $(this).attr('class');
+            var fullClass = that.attr('class');
 
-            $(this).find('a[target="_blank"]').each(function(index){
+            that.find('a[target="_blank"]').each(function(index){
                 var href = $(this).attr('href');
                 console.log(href);
                 
@@ -163,10 +164,12 @@ function checkNewLinks() {
                         console.log(href);
                     }
                 }
-            })
+            });
 
             if (isFake) {
-                $(this).find('.comment_link').each(function(index){
+                that.prepend('<div class="wrapper"><div class="ribbon-wrapper-green"><div class="ribbon-green">WARNING</div></div></div>​')
+
+                that.find('.comment_link').each(function(index){
                     $(this).text('Comment (this site contains clickbait and unreliable news)');
                     $(this).hide().show();
                     $(this).css('color', 'red');
@@ -174,8 +177,8 @@ function checkNewLinks() {
                     $(this).parent().next().insertBefore($(this));
 
                 });
-                $(this).parent().css('border', '1px solid red');
-                $(this).addClass('_nw_checked');
+                that.parent().css('border', '1px solid red');
+                that.addClass('_nw_checked');
             }
             window.setTimeout(function() {
                 $("[class='" + fullClass + "']").addClass('_nw_checked');
