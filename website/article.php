@@ -58,14 +58,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="content">
 			<div class="single-page">
 				<div class="print-main">
-					<h3>Printing</h3>
-					<a href="single.html">Software Review: Autodesk Inventor Fusion for Mac</a>
-					<p class="sub_head">Posted by <a href="#">Admin</a> on february 14,2015</p>
-					<a href="single.html"><img src="images/printing.jpg" class="img-responsive" alt="" /></a>
-					<p class="span"><a href="#">3D Printing, <a href="#">3D Software,</a><a href="#"> Files to Print </a> |  on february 14,2015</p>
-					<p class="ptext">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like</p>
-					<p class="ptext">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like</p>
-				</div>	
+					<h3><?php echo $articleDatas['title']; ?></h3>
+					<p class="ptext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $articleDatas['content']; ?></p>
+				</div>
 			</div>
 			<div class="clearfix"></div>
 		</div>
