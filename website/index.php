@@ -30,26 +30,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <?php require_once("/back/pages/index.php"); ?>
 <!-- header-section-starts -->
-<div class="header">
-    <div class="container">
-        <div class="logo">
-            <a href="index.php">
-                <img src="images/logo_newswatcher.png" alt=""/>
-                <h1>News Watcher</h1></a>
-        </div>
-        <div class="navigation">
-            <ul>
-                <?php
-                include 'pages/about.php'
-                ?>
-            </ul>
-        </div>
-        <div class="moto">
-            <span>Your personnal news trusting indicator</span>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
+	<?php
+		include 'pages/header.php'
+	?>
 <div class="container bodycontainer">
     <div class="header-bottom">
         <div class="type">
