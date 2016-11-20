@@ -138,5 +138,3 @@ function    updateResponse_article($id, $title, $content, $grade, $arg1, $arg2) 
     return (FALSE);
 }
 
-
- ?>

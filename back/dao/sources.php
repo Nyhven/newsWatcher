@@ -101,7 +101,7 @@ function    updateSource($id, $url, $grade, $name) {
         $stmt = $bdd->prepare('UPDATE sources SET url = ?, grade = ?, nom = ? WHERE id_src = ?');
         $stmt->bindValue(1, $url, PDO::PARAM_STR);
         $stmt->bindValue(2, $grade, PDO::PARAM_INT);
-        $stmt->bindValue(3, $name, PDO::PARAM_STR)
+        $stmt->bindValue(3, $name, PDO::PARAM_STR);
         $stmt->bindValue(4, $id, PDO::PARAM_INT);
         return ($stmt->execute());
     } catch (Exception $ex) {
