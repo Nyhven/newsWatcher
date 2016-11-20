@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src='js/cytoscape/cytoscape.js'></script>
 </head>
 <body>
+<?php require_once("/back/pages/article.php"); ?>
 	<!-- header-section-starts -->
 	<div class="header">
 		<div class="container">
