@@ -49,6 +49,7 @@ function    findSourcesByResponseArticle($id_resp) {
         $stmt = $bdd->prepare('SELECT url_src_specific, url, grade FROM link_response_src
             INNER JOIN sources ON sources.id_src = link_response_src.id_src
             WHERE link_response_src.id_resp = ?');
+            $stmt->bindValue(1, $id_resp, PDO::PARAM_INT);
         $success = $stmt->execute();
         if ($success) {
             $res = null;
